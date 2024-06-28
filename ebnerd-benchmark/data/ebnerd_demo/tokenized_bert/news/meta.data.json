@@ -1,0 +1,49 @@
+{
+  "version": "UniDep-2.0",
+  "vocs": {
+    "nid": {
+      "size": 11777,
+      "cols": [
+        "nid"
+      ]
+    },
+    "bert": {
+      "size": 119547,
+      "cols": [
+        "title",
+        "subtitle",
+        "body"
+      ]
+    },
+    "category": {
+      "size": 24,
+      "cols": [
+        "category"
+      ]
+    }
+  },
+  "cols": {
+    "nid": {
+      "vocab": "nid"
+    },
+    "title": {
+      "vocab": "bert",
+      "max_length": 20,
+      "padding": false
+    },
+    "subtitle": {
+      "vocab": "bert",
+      "max_length": 60,
+      "padding": false
+    },
+    "body": {
+      "vocab": "bert",
+      "max_length": 100,
+      "padding": false
+    },
+    "category": {
+      "vocab": "category"
+    }
+  },
+  "id_col": "nid"
+}

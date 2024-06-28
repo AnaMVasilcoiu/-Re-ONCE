@@ -1,0 +1,30 @@
+name: EB-NeRD
+base_dir: ebnerd-benchmark/data/ebnerd_demo
+item:
+  filter_cache: true
+  depot: ${data.base_dir}/news_fusion
+  order:
+    - title-llama
+    - caption-llama
+  append:
+    - nid
+  lm_col: title-llama
+user:
+  filter_cache: true
+  depots:
+    train:
+      path: ebnerd-benchmark/data/ebnerd_demo/tokenized_bert/train
+    test:
+      path: ebnerd-benchmark/data/ebnerd_demo/tokenized_bert/validation
+    dev: 
+      path: ebnerd-benchmark/data/ebnerd_demo/tokenized_bert/validation
+  union:
+    - ebnerd-benchmark/data/ebnerd_demo/tokenized_bert/user
+    - ebnerd-benchmark/data/ebnerd_demo/tokenized_bert/neg
+  candidate_col: nid
+  clicks_col: history
+  label_col: click
+  neg_col: neg
+  group_col: imp
+  user_col: uid
+  index_col: index

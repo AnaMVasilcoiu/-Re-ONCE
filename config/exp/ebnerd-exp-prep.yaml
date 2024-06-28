@@ -1,0 +1,15 @@
+name: ${exp.mode}
+dir: saving/${data.name}/${model.name}/${embed.name}-${exp.name}
+log: ${exp.dir}/exp.log
+mode: test_llm_layer_split
+store:
+  layers: [30]
+  dir: data/${data.name}/llama-${llm_ver}-split
+load:
+  save_dir: null
+  model_only: true
+  strict: true
+  wait: false
+policy:
+  device: gpu
+  batch_size: ${batch_size}$

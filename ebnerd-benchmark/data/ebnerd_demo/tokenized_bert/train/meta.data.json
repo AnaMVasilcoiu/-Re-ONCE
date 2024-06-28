@@ -1,0 +1,53 @@
+{
+  "version": "UniDep-2.0",
+  "vocs": {
+    "index": {
+      "size": 278139,
+      "cols": [
+        "index"
+      ]
+    },
+    "imp": {
+      "size": 24724,
+      "cols": [
+        "imp"
+      ]
+    },
+    "uid": {
+      "size": 3152,
+      "cols": [
+        "uid"
+      ]
+    },
+    "nid": {
+      "size": 11777,
+      "cols": [
+        "nid"
+      ]
+    },
+    "click": {
+      "size": 2,
+      "cols": [
+        "click"
+      ]
+    }
+  },
+  "cols": {
+    "index": {
+      "vocab": "index"
+    },
+    "imp": {
+      "vocab": "imp"
+    },
+    "uid": {
+      "vocab": "uid"
+    },
+    "nid": {
+      "vocab": "nid"
+    },
+    "click": {
+      "vocab": "click"
+    }
+  },
+  "id_col": "index"
+}

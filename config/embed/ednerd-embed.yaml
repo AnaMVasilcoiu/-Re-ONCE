@@ -1,0 +1,7 @@
+name: llama-full
+embeddings:
+  -
+    vocab_name: nid
+    vocab_type: numpy
+    path: llama-token.npy
+    frozen: true

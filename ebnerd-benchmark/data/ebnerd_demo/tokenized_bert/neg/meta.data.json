@@ -1,0 +1,28 @@
+{
+  "version": "UniDep-2.0",
+  "vocs": {
+    "uid": {
+      "size": 3152,
+      "cols": [
+        "uid"
+      ]
+    },
+    "nid": {
+      "size": 11777,
+      "cols": [
+        "neg"
+      ]
+    }
+  },
+  "cols": {
+    "uid": {
+      "vocab": "uid"
+    },
+    "neg": {
+      "vocab": "nid",
+      "max_length": 250,
+      "padding": false
+    }
+  },
+  "id_col": "uid"
+}
