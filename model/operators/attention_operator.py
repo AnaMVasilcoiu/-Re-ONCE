@@ -2,8 +2,8 @@ from torch import nn
 
 from loader.meta import Meta
 from model.common.attention import AdditiveAttention
-from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 from model.inputer.concat_inputer import ConcatInputer
+from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 
 
 class AttentionOperatorConfig(BaseOperatorConfig):

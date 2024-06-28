@@ -1,12 +1,12 @@
 from typing import Dict, Union
 
 import torch
-from UniTok import Vocab
 from pigmento import pnt
 from torch import nn
+from UniTok import Vocab
 
-from loader.embedding.embedding_loader import EmbeddingLoader
 from loader.data_hub import DataHub
+from loader.embedding.embedding_loader import EmbeddingLoader
 
 
 class TransformEmbedding(nn.Module):

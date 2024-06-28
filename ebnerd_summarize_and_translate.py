@@ -1,7 +1,8 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-import pandas as pd
 import argparse
 import os
+
+import pandas as pd
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 # Translator
 tokenizer_translator = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-da-en")

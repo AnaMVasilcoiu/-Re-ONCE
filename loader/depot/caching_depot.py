@@ -2,8 +2,8 @@ import json
 import os.path
 
 import numpy as np
-from UniTok import UniDep
 from pigmento import pnt
+from UniTok import UniDep
 
 from utils.rand import Rand
 

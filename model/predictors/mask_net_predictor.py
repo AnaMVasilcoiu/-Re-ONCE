@@ -3,7 +3,7 @@ from torch import nn
 
 from model.common.activation import get_activation
 from model.common.mlp_layer import MLPLayer
-from model.predictors.base_predictor import BasePredictorConfig, BasePredictor
+from model.predictors.base_predictor import BasePredictor, BasePredictorConfig
 
 
 class MaskNetPredictorConfig(BasePredictorConfig):

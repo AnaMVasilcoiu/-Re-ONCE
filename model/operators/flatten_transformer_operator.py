@@ -1,5 +1,4 @@
 from model.inputer.flatten_seq_inputer import FlattenSeqInputer
-
 from model.operators.transformer_operator import TransformerOperator
 
 

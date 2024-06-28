@@ -1,10 +1,10 @@
 import json
-import time
 import os
+import time
+
 from tqdm import tqdm
 
-from processor.ebnerd.prompter import EbnerdPrompter, EbnerdColdUser
-
+from processor.ebnerd.prompter import EbnerdColdUser, EbnerdPrompter
 from utils.openai.chat_service import ChatService
 
 MIN_INTERVAL = 0

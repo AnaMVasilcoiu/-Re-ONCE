@@ -1,4 +1,4 @@
-from typing import Type, Dict, cast, Optional
+from typing import Dict, Optional, Type, cast
 
 import torch
 from pigmento import pnt

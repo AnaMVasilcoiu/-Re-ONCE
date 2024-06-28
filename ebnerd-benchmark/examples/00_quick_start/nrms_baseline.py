@@ -1,36 +1,36 @@
-from transformers import AutoTokenizer, AutoModel
 from pathlib import Path
-import tensorflow as tf
-import polars as pl
 
+import polars as pl
+import tensorflow as tf
+from ebrec.evaluation import AucScore, MetricEvaluator, MrrScore, NdcgScore
+from ebrec.models.newsrec import NRMSModel
+from ebrec.models.newsrec.dataloader import NRMSDataLoader
+from ebrec.models.newsrec.model_config import hparams_nrms
+from ebrec.utils._articles import (
+    convert_text2encoding_with_transformers,
+    create_article_id_to_value_mapping,
+)
+from ebrec.utils._behaviors import (
+    add_known_user_column,
+    add_prediction_scores,
+    create_binary_labels_column,
+    sampling_strategy_wu2019,
+    truncate_history,
+)
 from ebrec.utils._constants import (
-    DEFAULT_HISTORY_ARTICLE_ID_COL,
     DEFAULT_CLICKED_ARTICLES_COL,
-    DEFAULT_INVIEW_ARTICLES_COL,
+    DEFAULT_HISTORY_ARTICLE_ID_COL,
     DEFAULT_IMPRESSION_ID_COL,
-    DEFAULT_SUBTITLE_COL,
+    DEFAULT_INVIEW_ARTICLES_COL,
     DEFAULT_LABELS_COL,
+    DEFAULT_SUBTITLE_COL,
     DEFAULT_TITLE_COL,
     DEFAULT_USER_COL,
 )
-
-from ebrec.utils._behaviors import (
-    create_binary_labels_column,
-    sampling_strategy_wu2019,
-    add_known_user_column,
-    add_prediction_scores,
-    truncate_history,
-)
-from ebrec.evaluation import MetricEvaluator, AucScore, NdcgScore, MrrScore
-from ebrec.utils._articles import convert_text2encoding_with_transformers
-from ebrec.utils._polars import concat_str_columns, slice_join_dataframes
-from ebrec.utils._articles import create_article_id_to_value_mapping
 from ebrec.utils._nlp import get_transformers_word_embeddings
-from ebrec.utils._python import write_submission_file, rank_predictions_by_score
-
-from ebrec.models.newsrec.dataloader import NRMSDataLoader
-from ebrec.models.newsrec.model_config import hparams_nrms
-from ebrec.models.newsrec import NRMSModel
+from ebrec.utils._polars import concat_str_columns, slice_join_dataframes
+from ebrec.utils._python import rank_predictions_by_score, write_submission_file
+from transformers import AutoModel, AutoTokenizer
 
 
 def ebnerd_from_path(path: Path, history_size: int = 30) -> pl.DataFrame:

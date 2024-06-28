@@ -1,7 +1,7 @@
 from oba import Obj
 
-from loader.pager.llm_split_pager import LLMSplitPager
 from loader.mode.base_mode import BaseMode
+from loader.pager.llm_split_pager import LLMSplitPager
 from model.operators.base_llm_operator import BaseLLMOperator
 
 

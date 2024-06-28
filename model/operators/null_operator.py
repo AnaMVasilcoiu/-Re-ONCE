@@ -1,8 +1,8 @@
 from collections import OrderedDict
 
 from model.inputer.concat_inputer import ConcatInputer
-from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 from model.inputer.simple_inputer import SimpleInputer
+from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 
 
 class NullOperatorConfig(BaseOperatorConfig):

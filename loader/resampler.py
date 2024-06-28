@@ -4,12 +4,12 @@ import numpy as np
 import torch
 from tqdm import tqdm
 
+from loader.data_hub import DataHub
+from loader.data_set import DataSet
 from loader.meta import Meta
 from loader.status import Status
 from model.legommender import Legommender, LegommenderConfig
-from loader.data_hub import DataHub
-from loader.data_set import DataSet
-from utils.stacker import Stacker, FastStacker
+from utils.stacker import FastStacker, Stacker
 from utils.timer import Timer
 
 

@@ -1,7 +1,7 @@
 from torch.utils.data import DataLoader as BaseDataLoader
 
-from loader.resampler import Resampler
 from loader.data_set import DataSet
+from loader.resampler import Resampler
 
 
 class DataLoader(BaseDataLoader):

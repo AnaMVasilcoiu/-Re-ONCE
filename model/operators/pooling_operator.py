@@ -3,8 +3,8 @@ from collections import OrderedDict
 import torch
 
 from loader.meta import Meta
-from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 from model.inputer.simple_inputer import SimpleInputer
+from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 
 
 class PoolingOperatorConfig(BaseOperatorConfig):

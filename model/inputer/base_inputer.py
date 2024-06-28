@@ -1,10 +1,10 @@
-from typing import Optional, List, Dict
+from typing import Dict, List, Optional
 
 import torch
-from UniTok import Vocab, UniDep
+from UniTok import UniDep, Vocab
 
-from loader.embedding.embedding_hub import EmbeddingHub
 from loader.data_hub import DataHub
+from loader.embedding.embedding_hub import EmbeddingHub
 
 
 class BaseInputer:

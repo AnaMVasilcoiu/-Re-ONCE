@@ -4,7 +4,7 @@ from torch import nn
 from loader.meta import Meta
 from model.common.attention import AdditiveAttention
 from model.inputer.simple_inputer import SimpleInputer
-from model.operators.base_operator import BaseOperatorConfig, BaseOperator
+from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 
 
 class CNNOperatorConfig(BaseOperatorConfig):

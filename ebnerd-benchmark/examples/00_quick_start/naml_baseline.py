@@ -4,62 +4,66 @@ from pathlib import Path
 import numpy as np
 import polars as pl
 import tensorflow as tf
-from transformers import AutoTokenizer, AutoModel
-
-from ebrec.evaluation import MetricEvaluator, AucScore, NdcgScore, MrrScore
-from ebrec.models.newsrec.model_config import hparams_nrms, hparams_naml
+from ebrec.evaluation import AucScore, MetricEvaluator, MrrScore, NdcgScore
+from ebrec.models.newsrec.model_config import hparams_naml, hparams_nrms
 from ebrec.models.newsrec.naml import NAMLModel
 from ebrec.utils._articles import (
+    convert_text2encoding_with_transformers,
     create_article_id_to_value_mapping,
-    convert_text2encoding_with_transformers
 )
+from ebrec.utils._articles_behaviors import map_list_article_id_to_value
 from ebrec.utils._behaviors import (
-    create_binary_labels_column,
-    sampling_strategy_wu2019,
     add_known_user_column,
     add_prediction_scores,
+    create_binary_labels_column,
+    create_user_id_to_int_mapping,
+    sampling_strategy_wu2019,
     truncate_history,
-    create_user_id_to_int_mapping
 )
-
 from ebrec.utils._constants import (
-    DEFAULT_IMPRESSION_TIMESTAMP_COL,
-    DEFAULT_SCROLL_PERCENTAGE_COL,
-    DEFAULT_CLICKED_ARTICLES_COL,
-    DEFAULT_INVIEW_ARTICLES_COL,
-    DEFAULT_IMPRESSION_ID_COL,
     DEFAULT_ARTICLE_ID_COL,
-    DEFAULT_SESSION_ID_COL,
-    DEFAULT_READ_TIME_COL,
-    DEFAULT_USER_COL,
-    DEFAULT_GENDER_COL,
     DEFAULT_ARTICLE_MODIFIED_TIMESTAMP_COL,
     DEFAULT_ARTICLE_PUBLISHED_TIMESTAMP_COL,
+    DEFAULT_ARTICLE_TYPE_COL,
+    DEFAULT_BODY_COL,
+    DEFAULT_CATEGORY_COL,
+    DEFAULT_CATEGORY_STR_COL,
+    DEFAULT_CLICKED_ARTICLES_COL,
+    DEFAULT_ENTITIES_COL,
+    DEFAULT_GENDER_COL,
+    DEFAULT_HISTORY_ARTICLE_ID_COL,
+    DEFAULT_HISTORY_IMPRESSION_TIMESTAMP_COL,
+    DEFAULT_HISTORY_READ_TIME_COL,
+    DEFAULT_HISTORY_SCROLL_PERCENTAGE_COL,
+    DEFAULT_IMAGE_IDS_COL,
+    DEFAULT_IMPRESSION_ID_COL,
+    DEFAULT_IMPRESSION_TIMESTAMP_COL,
+    DEFAULT_INVIEW_ARTICLES_COL,
+    DEFAULT_LABELS_COL,
+    DEFAULT_READ_TIME_COL,
+    DEFAULT_SCROLL_PERCENTAGE_COL,
     DEFAULT_SENTIMENT_LABEL_COL,
     DEFAULT_SENTIMENT_SCORE_COL,
-    DEFAULT_TOTAL_READ_TIME_COL,
-    DEFAULT_TOTAL_PAGEVIEWS_COL,
-    DEFAULT_TOTAL_INVIEWS_COL,
-    DEFAULT_ARTICLE_TYPE_COL,
-    DEFAULT_CATEGORY_STR_COL,
+    DEFAULT_SESSION_ID_COL,
     DEFAULT_SUBCATEGORY_COL,
-    DEFAULT_ENTITIES_COL,
-    DEFAULT_IMAGE_IDS_COL,
     DEFAULT_SUBTITLE_COL,
-    DEFAULT_CATEGORY_COL,
-    DEFAULT_TOPICS_COL,
     DEFAULT_TITLE_COL,
-    DEFAULT_BODY_COL,
-    DEFAULT_HISTORY_IMPRESSION_TIMESTAMP_COL,
-    DEFAULT_HISTORY_SCROLL_PERCENTAGE_COL,
-    DEFAULT_HISTORY_ARTICLE_ID_COL,
-    DEFAULT_HISTORY_READ_TIME_COL,
-    DEFAULT_LABELS_COL
+    DEFAULT_TOPICS_COL,
+    DEFAULT_TOTAL_INVIEWS_COL,
+    DEFAULT_TOTAL_PAGEVIEWS_COL,
+    DEFAULT_TOTAL_READ_TIME_COL,
+    DEFAULT_USER_COL,
 )
 from ebrec.utils._nlp import get_transformers_word_embeddings
 from ebrec.utils._polars import concat_str_columns, slice_join_dataframes
-from ebrec.utils._python import create_lookup_dict, time_it, write_submission_file, rank_predictions_by_score, create_lookup_objects
-from ebrec.utils._articles_behaviors import map_list_article_id_to_value
+from ebrec.utils._python import (
+    create_lookup_dict,
+    create_lookup_objects,
+    rank_predictions_by_score,
+    time_it,
+    write_submission_file,
+)
+from transformers import AutoModel, AutoTokenizer
 
 
 @dataclass

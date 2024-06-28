@@ -3,7 +3,7 @@ from typing import Optional
 
 import numpy as np
 import torch
-from peft import get_peft_model, LoraConfig
+from peft import LoraConfig, get_peft_model
 from pigmento import pnt
 from torch import nn
 from transformers import PreTrainedModel

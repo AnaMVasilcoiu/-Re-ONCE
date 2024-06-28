@@ -2,11 +2,11 @@
 https://github.com/aqweteddy/NRMS-Pytorch/
 """
 
+from typing import Optional, Tuple
+
 import torch
 from torch import nn
 from torch.nn import functional as F
-
-from typing import Tuple, Optional
 
 
 class AdditiveAttention(nn.Module):

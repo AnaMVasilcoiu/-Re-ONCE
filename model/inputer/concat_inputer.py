@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from typing import Optional, Dict, List
+from typing import Dict, List, Optional
 
 import torch
 from UniTok import Vocab

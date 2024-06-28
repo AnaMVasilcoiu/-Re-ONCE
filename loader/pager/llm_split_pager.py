@@ -3,8 +3,8 @@ import os
 import numpy as np
 import torch
 
-from model.inputer.natural_concat_inputer import NaturalConcatInputer
 from loader.pager.base_pager import BasePager
+from model.inputer.natural_concat_inputer import NaturalConcatInputer
 
 
 class LLMSplitPager(BasePager):

@@ -1,6 +1,6 @@
-import torch
 import numpy as np
-from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM,LlamaModel
+import torch
+from transformers import AutoModel, AutoModelForCausalLM, AutoTokenizer, LlamaModel
 
 pretrained_dir = 'llama_converted'
 device = 'cuda'

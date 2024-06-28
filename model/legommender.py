@@ -4,6 +4,10 @@ import torch
 from pigmento import pnt
 from torch import nn
 
+from loader.cacher.repr_cacher import ReprCacher
+from loader.column_map import ColumnMap
+from loader.data_hub import DataHub
+from loader.embedding.embedding_hub import EmbeddingHub
 from loader.meta import Meta
 from loader.status import Status
 from model.common.base_module import BaseModule
@@ -12,10 +16,6 @@ from model.common.user_plugin import UserPlugin
 from model.operators.base_llm_operator import BaseLLMOperator
 from model.operators.base_operator import BaseOperator
 from model.predictors.base_predictor import BasePredictor
-from loader.cacher.repr_cacher import ReprCacher
-from loader.column_map import ColumnMap
-from loader.embedding.embedding_hub import EmbeddingHub
-from loader.data_hub import DataHub
 from utils.function import combine_config
 from utils.shaper import Shaper
 

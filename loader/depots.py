@@ -6,7 +6,7 @@ from pigmento import pnt
 from loader.column_map import ColumnMap
 from loader.depot.caching_depot import CachingDep
 from loader.depot.depot_hub import DepotHub
-from loader.meta import Phases, Meta
+from loader.meta import Meta, Phases
 
 
 class Depots:

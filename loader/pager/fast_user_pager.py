@@ -1,8 +1,8 @@
 import torch
 
 from loader.meta import Meta
-from utils.stacker import FastStacker
 from loader.pager.base_pager import BasePager
+from utils.stacker import FastStacker
 
 
 class FastUserPager(BasePager):

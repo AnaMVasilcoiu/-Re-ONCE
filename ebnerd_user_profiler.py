@@ -1,9 +1,9 @@
 import json
-import time
 import os
+import time
 
-from tqdm import tqdm
 import pandas as pd
+from tqdm import tqdm
 
 from processor.ebnerd.prompter import EbnerdPrompter, EbnerdUser
 from utils.openai.chat_service import ChatService

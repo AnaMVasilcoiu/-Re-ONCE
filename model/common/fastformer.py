@@ -2,7 +2,11 @@ import logging
 
 import torch
 from torch import nn
-from transformers.models.bert.modeling_bert import BertIntermediate, BertOutput, BertSelfOutput
+from transformers.models.bert.modeling_bert import (
+    BertIntermediate,
+    BertOutput,
+    BertSelfOutput,
+)
 
 
 class FastformerConfig:

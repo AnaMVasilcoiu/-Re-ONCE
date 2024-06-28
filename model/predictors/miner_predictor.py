@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from model.predictors.base_predictor import BasePredictorConfig, BasePredictor
+from model.predictors.base_predictor import BasePredictor, BasePredictorConfig
 
 
 class MINERPredictorConfig(BasePredictorConfig):

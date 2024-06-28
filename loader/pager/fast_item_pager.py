@@ -1,9 +1,9 @@
 import torch
 
 from loader.meta import Meta
+from loader.pager.base_pager import BasePager
 from model.inputer.base_inputer import BaseInputer
 from utils.stacker import Stacker
-from loader.pager.base_pager import BasePager
 
 
 class FastItemPager(BasePager):

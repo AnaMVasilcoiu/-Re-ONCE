@@ -3,10 +3,10 @@ from typing import Type
 import torch
 from torch import nn
 
+from loader.data_hub import DataHub
+from loader.embedding.embedding_hub import EmbeddingHub
 from model.common.base_module import BaseModule
 from model.inputer.base_inputer import BaseInputer
-from loader.embedding.embedding_hub import EmbeddingHub
-from loader.data_hub import DataHub
 
 
 class BaseOperatorConfig:

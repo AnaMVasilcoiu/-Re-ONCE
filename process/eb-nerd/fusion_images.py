@@ -1,6 +1,7 @@
-from UniTok import UniDep
-import numpy as np
 import os
+
+import numpy as np
+from UniTok import UniDep
 
 news = UniDep(os.path.join("ebnerd-benchmark/data/ebnerd_demo/tokenized_bert", 'news'))
 news_llama = UniDep('ebnerd-benchmark/data/ebnerd_demo/tokenized_llama/news-llama')

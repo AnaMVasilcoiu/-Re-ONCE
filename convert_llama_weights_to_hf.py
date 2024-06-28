@@ -19,8 +19,13 @@ import shutil
 import warnings
 
 import torch
+from transformers import (
+    LlamaConfig,
+    LlamaForCausalLM,
+    LlamaTokenizer,
+    PreTrainedTokenizerFast,
+)
 
-from transformers import LlamaConfig, LlamaForCausalLM, LlamaTokenizer, PreTrainedTokenizerFast
 # from transformers.convert_slow_tokenizer import TikTokenConverter
 
 

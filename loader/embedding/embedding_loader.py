@@ -3,7 +3,13 @@ from typing import Optional
 
 import numpy as np
 import torch
-from transformers import AutoModelForMaskedLM, BertForMaskedLM, BertConfig, BertModel, load_tf_weights_in_bert
+from transformers import (
+    AutoModelForMaskedLM,
+    BertConfig,
+    BertForMaskedLM,
+    BertModel,
+    load_tf_weights_in_bert,
+)
 
 
 class EmbeddingLoader:

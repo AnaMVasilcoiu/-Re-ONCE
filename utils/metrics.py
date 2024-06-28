@@ -1,10 +1,16 @@
 from collections import OrderedDict
 from multiprocessing import Pool
-from typing import Dict, Union, List
+from typing import Dict, List, Union
 
 import pandas as pd
 import torch
-from sklearn.metrics import log_loss, roc_auc_score, ndcg_score, label_ranking_average_precision_score, f1_score
+from sklearn.metrics import (
+    f1_score,
+    label_ranking_average_precision_score,
+    log_loss,
+    ndcg_score,
+    roc_auc_score,
+)
 
 
 class Metric:

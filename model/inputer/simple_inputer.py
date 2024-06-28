@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from typing import Optional, List, Dict
+from typing import Dict, List, Optional
 
 import numpy as np
 import torch
@@ -7,7 +7,7 @@ from UniTok import Vocab
 
 from loader.meta import Meta
 from model.inputer.base_inputer import BaseInputer
-from utils.slice_dict import SliceOrderedDict, SliceDict
+from utils.slice_dict import SliceDict, SliceOrderedDict
 
 
 class SimpleInputer(BaseInputer):

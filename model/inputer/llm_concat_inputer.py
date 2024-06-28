@@ -1,5 +1,4 @@
-from loader.meta import DatasetType
-from loader.meta import Meta
+from loader.meta import DatasetType, Meta
 from model.inputer.natural_concat_inputer import NaturalConcatInputer
 
 

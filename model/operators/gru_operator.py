@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 from model.inputer.concat_inputer import ConcatInputer
+from model.operators.base_operator import BaseOperator, BaseOperatorConfig
 
 
 class GRUOperatorConfig(BaseOperatorConfig):

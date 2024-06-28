@@ -1,6 +1,6 @@
 import torch
-from UniTok import UniDep
 from torch import nn
+from UniTok import UniDep
 
 
 class UserPlugin(nn.Module):

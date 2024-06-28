@@ -1,10 +1,10 @@
 from collections import OrderedDict
-from typing import Optional, List, Dict
+from typing import Dict, List, Optional
 
 import numpy as np
 import torch
-from UniTok import Vocab
 from pigmento import pnt
+from UniTok import Vocab
 
 from loader.data_hub import DataHub
 from loader.meta import Meta

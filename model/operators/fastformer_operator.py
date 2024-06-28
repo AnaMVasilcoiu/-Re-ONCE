@@ -1,10 +1,10 @@
 from torch import nn
 
 from loader.meta import Meta
-from model.common.fastformer import FastformerModel, FastformerConfig
+from model.common.fastformer import FastformerConfig, FastformerModel
+from model.inputer.concat_inputer import ConcatInputer
 from model.operators.attention_operator import AttentionOperatorConfig
 from model.operators.base_operator import BaseOperator
-from model.inputer.concat_inputer import ConcatInputer
 
 
 class FastformerOperatorConfig(AttentionOperatorConfig):

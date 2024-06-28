@@ -1,10 +1,10 @@
 import os.path
 
 import pandas as pd
-from UniTok import UniTok, Column, Vocab, UniDep
-from UniTok.tok import BertTok, IdTok, EntTok, SeqTok, NumberTok, BaseTok
 from tqdm import tqdm
 from transformers import LlamaTokenizer
+from UniTok import Column, UniDep, UniTok, Vocab
+from UniTok.tok import BaseTok, BertTok, EntTok, IdTok, NumberTok, SeqTok
 
 
 class LlamaTok(BaseTok):

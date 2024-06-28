@@ -1,11 +1,11 @@
 import json
 import os
 
+import numpy as np
 import pandas as pd
+import polars as pl
 from tqdm import tqdm
 from UniTok import UniDep
-import polars as pl
-import numpy as np
 
 
 class EbnerdPrompter:

@@ -1,12 +1,11 @@
 from torch import nn
+from transformers.models.bert.modeling_bert import BertConfig, BertModel
 
 from loader.meta import Meta
 from model.common.attention import AdditiveAttention
+from model.inputer.concat_inputer import ConcatInputer
 from model.operators.attention_operator import AttentionOperatorConfig
 from model.operators.base_operator import BaseOperator
-from model.inputer.concat_inputer import ConcatInputer
-
-from transformers.models.bert.modeling_bert import BertModel, BertConfig
 
 
 class TransformerOperatorConfig(AttentionOperatorConfig):

@@ -1,11 +1,10 @@
-import time
 import os
+import time
 
 from tqdm import tqdm
 
-from utils.openai.chat_service import ChatService
-
 from processor.ebnerd.prompter import EbnerdPrompter
+from utils.openai.chat_service import ChatService
 
 MIN_INTERVAL = 1.5
 

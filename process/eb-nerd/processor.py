@@ -1,12 +1,11 @@
 import os.path
+import sys
 
 import pandas as pd
-import sys
 from tqdm import tqdm
-import pandas as pd
-from UniTok import UniTok, Column, Vocab, UniDep
-from UniTok.tok import BertTok, IdTok, EntTok, SeqTok, NumberTok, BaseTok
-from tqdm import tqdm
+from UniTok import Column, UniDep, UniTok, Vocab
+from UniTok.tok import BaseTok, BertTok, EntTok, IdTok, NumberTok, SeqTok
+
 
 class Processor:
     def __init__(self, data_dir, store_dir):

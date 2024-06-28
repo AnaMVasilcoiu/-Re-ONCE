@@ -2,8 +2,8 @@ import os
 import subprocess
 
 import pandas as pd
-from UniTok import UniDep
 from tqdm import tqdm
+from UniTok import UniDep
 
 from loader.column_map import ColumnMap
 from utils.timing import Timing
